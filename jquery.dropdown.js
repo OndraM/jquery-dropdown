@@ -59,7 +59,7 @@ if(jQuery) (function($) {
 		// Trigger the show callback
 		jqdropdown
 			.trigger('show', {
-				dropdown: dropdown,
+				jqdropdown: jqdropdown,
 				trigger: trigger
 			});
 
@@ -71,9 +71,9 @@ if(jQuery) (function($) {
 		var targetGroup = event ? $(event.target).parents().andSelf() : null;
 
 		// Are we clicking anywhere in a dropdown?
-		if( targetGroup && targetGroup.is('.dropdown') ) {
+		if( targetGroup && targetGroup.is('.jqdropdown') ) {
 			// Is it a dropdown menu?
-			if( targetGroup.is('.dropdown-menu') ) {
+			if( targetGroup.is('.jqdropdown-menu') ) {
 				// Did we click on an option? If so close it.
 				if( !targetGroup.is('A') ) return;
 			} else {
