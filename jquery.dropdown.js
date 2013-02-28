@@ -11,22 +11,22 @@
 if(jQuery) (function($) {
 
 	$.extend($.fn, {
-		dropdown: function(method, data) {
+		jqdropdown: function(method, data) {
 
 			switch( method ) {
 				case 'hide':
 					hide();
 					return $(this);
 				case 'attach':
-					return $(this).attr('data-dropdown', data);
+					return $(this).attr('data-jqdropdown', data);
 				case 'detach':
 					hide();
-					return $(this).removeAttr('data-dropdown');
+					return $(this).removeAttr('data-jqdropdown');
 				case 'disable':
-					return $(this).addClass('dropdown-disabled');
+					return $(this).addClass('jqdropdown-disabled');
 				case 'enable':
 					hide();
-					return $(this).removeClass('dropdown-disabled');
+					return $(this).removeClass('jqdropdown-disabled');
 			}
 
 		}
@@ -35,29 +35,29 @@ if(jQuery) (function($) {
 	function show(event) {
 
 		var trigger = $(this),
-			dropdown = $(trigger.attr('data-dropdown')),
-			isOpen = trigger.hasClass('dropdown-open');
+			jqdropdown = $(trigger.attr('data-jqdropdown')),
+			isOpen = trigger.hasClass('jqdropdown-open');
 
 		// In some cases we don't want to show it
-		if( trigger !== event.target && $(event.target).hasClass('dropdown-ignore') ) return;
+		if( trigger !== event.target && $(event.target).hasClass('jqdropdown-ignore') ) return;
 
 		event.preventDefault();
 		event.stopPropagation();
 		hide();
 
-		if( isOpen || trigger.hasClass('dropdown-disabled') ) return;
+		if( isOpen || trigger.hasClass('jqdropdown-disabled') ) return;
 
 		// Show it
-		trigger.addClass('dropdown-open');
-		dropdown
-			.data('dropdown-trigger', trigger)
+		trigger.addClass('jqdropdown-open');
+		jqdropdown
+			.data('jqdropdown-trigger', trigger)
 			.show();
 
 		// Position it
 		position();
 
 		// Trigger the show callback
-		dropdown
+		jqdropdown
 			.trigger('show', {
 				dropdown: dropdown,
 				trigger: trigger
@@ -83,40 +83,40 @@ if(jQuery) (function($) {
 		}
 
 		// Hide any dropdown that may be showing
-		$(document).find('.dropdown:visible').each( function() {
-			var dropdown = $(this);
-			dropdown
+		$(document).find('.jqdropdown:visible').each( function() {
+			var jqdropdown = $(this);
+			jqdropdown
 				.hide()
-				.removeData('dropdown-trigger')
-				.trigger('hide', { dropdown: dropdown });
+				.removeData('jqdropdown-trigger')
+				.trigger('hide', { jqdropdown: jqdropdown });
 		});
 
 		// Remove all dropdown-open classes
-		$(document).find('.dropdown-open').removeClass('dropdown-open');
+		$(document).find('.jqdropdown-open').removeClass('jqdropdown-open');
 
 	}
 
 	function position() {
 
-		var dropdown = $('.dropdown:visible').eq(0),
-			trigger = dropdown.data('dropdown-trigger'),
+		var jqdropdown = $('.jqdropdown:visible').eq(0),
+			trigger = jqdropdown.data('jqdropdown-trigger'),
 			hOffset = trigger ? parseInt(trigger.attr('data-horizontal-offset') || 0, 10) : null,
 			vOffset = trigger ? parseInt(trigger.attr('data-vertical-offset') || 0, 10) : null;
 
-		if( dropdown.length === 0 || !trigger ) return;
+		if( jqdropdown.length === 0 || !trigger ) return;
 
 		// Position the dropdown
-		dropdown
+		jqdropdown
 			.css({
-				left: dropdown.hasClass('dropdown-anchor-right') ?
-					trigger.offset().left - (dropdown.outerWidth() - trigger.outerWidth()) + hOffset : trigger.offset().left + hOffset,
+				left: jqdropdown.hasClass('jqdropdown-anchor-right') ?
+					trigger.offset().left - (jqdropdown.outerWidth() - trigger.outerWidth()) + hOffset : trigger.offset().left + hOffset,
 				top: trigger.offset().top + trigger.outerHeight() + vOffset
 			});
 
 	}
 
-	$(document).on('click.dropdown', '[data-dropdown]', show);
-	$(document).on('click.dropdown', hide);
+	$(document).on('click.jqdropdown', '[data-jqdropdown]', show);
+	$(document).on('click.jqdropdown', hide);
 	$(window).on('resize', position);
 
 })(jQuery);

@@ -1,11 +1,11 @@
-.dropdown {
+.jqdropdown {
 	position: absolute;
 	z-index: 9999999;
 	display: none;
 }
 
-.dropdown .dropdown-menu,
-.dropdown .dropdown-panel {
+.jqdropdown .jqdropdown-menu,
+.jqdropdown .jqdropdown-panel {
 	min-width: 160px;
 	max-width: 360px;
 	list-style: none;
@@ -19,15 +19,15 @@
 	margin: 0;
 }
 
-.dropdown .dropdown-panel {
+.jqdropdown .jqdropdown-panel {
 	padding: 10px;
 }
 
-.dropdown.dropdown-tip {
+.jqdropdown.jqdropdown-tip {
 	margin-top: 8px;
 }
 
-.dropdown.dropdown-tip:before {
+.jqdropdown.jqdropdown-tip:before {
   position: absolute;
   top: -6px;
   left: 9px;
@@ -39,12 +39,12 @@
   display: inline-block;
 }
 
-.dropdown.dropdown-tip.dropdown-anchor-right:before {
+.jqdropdown.jqdropdown-tip.jqdropdown-anchor-right:before {
 	left: auto;
 	right: 9px;
 }
 
-.dropdown.dropdown-tip:after {
+.jqdropdown.jqdropdown-tip:after {
   position: absolute;
   top: -5px;
   left: 10px;
@@ -55,27 +55,27 @@
   display: inline-block;
 }
 
-.dropdown.dropdown-tip.dropdown-anchor-right:after {
+.jqdropdown.jqdropdown-tip.jqdropdown-anchor-right:after {
 	left: auto;
 	right: 10px;
 }
 
 
-.dropdown.dropdown-scroll .dropdown-menu,
-.dropdown.dropdown-scroll .dropdown-panel {
+.jqdropdown.jqdropdown-scroll .jqdropdown-menu,
+.jqdropdown.jqdropdown-scroll .jqdropdown-panel {
 	max-height: 358px;
 	overflow: auto;
 }
 
-.dropdown .dropdown-menu LI {
+.jqdropdown .jqdropdown-menu LI {
 	list-style: none;
 	padding: 0 0;
 	margin: 0;
 	line-height: 18px;
 }
 
-.dropdown .dropdown-menu LI > A,
-.dropdown .dropdown-menu LABEL {
+.jqdropdown .jqdropdown-menu LI > A,
+.jqdropdown .jqdropdown-menu LABEL {
 	display: block;
 	color: #555;
 	text-decoration: none;
@@ -84,14 +84,14 @@
 	white-space: nowrap;
 }
 
-.dropdown .dropdown-menu LI > A:hover,
-.dropdown .dropdown-menu LABEL:hover {
+.jqdropdown .jqdropdown-menu LI > A:hover,
+.jqdropdown .jqdropdown-menu LABEL:hover {
 	background-color: #08C;
 	color: #FFF;
 	cursor: pointer;
 }
 
-.dropdown .dropdown-menu .dropdown-divider {
+.jqdropdown .jqdropdown-menu .jqdropdown-divider {
 	font-size: 1px;
 	border-top: solid 1px #E5E5E5;
 	padding: 0;
@@ -99,15 +99,15 @@
 }
 
 /* Icon Examples - icons courtesy of http://p.yusukekamiyamane.com/ */
-.dropdown.has-icons LI > A {
+.jqdropdown.has-icons LI > A {
 	padding-left: 30px;
 	background-position: 8px center;
 	background-repeat: no-repeat;
 }
 
-.dropdown .undo A { background-image: url(icons/arrow-curve-180-left.png); }
-.dropdown .redo A { background-image: url(icons/arrow-curve.png); }
-.dropdown .cut A { background-image: url(icons/scissors.png); }
-.dropdown .copy A { background-image: url(icons/document-copy.png); }
-.dropdown .paste A { background-image: url(icons/clipboard.png); }
-.dropdown .delete A { background-image: url(icons/cross-script.png); }
+.jqdropdown .undo A { background-image: url(icons/arrow-curve-180-left.png); }
+.jqdropdown .redo A { background-image: url(icons/arrow-curve.png); }
+.jqdropdown .cut A { background-image: url(icons/scissors.png); }
+.jqdropdown .copy A { background-image: url(icons/document-copy.png); }
+.jqdropdown .paste A { background-image: url(icons/clipboard.png); }
+.jqdropdown .delete A { background-image: url(icons/cross-script.png); }
