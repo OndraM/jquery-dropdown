@@ -108,9 +108,9 @@ if(jQuery) (function($) {
 		// Position the dropdown
 		jqdropdown.css({
 			left: jqdropdown.hasClass('jqdropdown-anchor-right') ?
-				trigger.position().left - (jqdropdown.outerWidth(true) - trigger.outerWidth(true)) - parseInt(trigger.css('margin-right')) + hOffset :
-				trigger.position().left + parseInt(trigger.css('margin-left')) + hOffset,
-			top: trigger.position().top + trigger.outerHeight(true) - parseInt(trigger.css('margin-top')) + vOffset
+				trigger.position().left - (jqdropdown.outerWidth(true) - trigger.outerWidth(true)) - parseInt(trigger.css('margin-right'), 10) + hOffset :
+				trigger.position().left + parseInt(trigger.css('margin-left'), 10) + hOffset,
+			top: trigger.position().top + trigger.outerHeight(true) - parseInt(trigger.css('margin-top'), 10) + vOffset
 		});
 
 	}
